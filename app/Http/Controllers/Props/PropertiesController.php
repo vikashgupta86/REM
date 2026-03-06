@@ -144,10 +144,11 @@ class PropertiesController extends Controller
        $offer_type=$request->input('offer_types');
        $city_type=$request->input('city_types');
          $results=Property::select()->where('home_type','like','%'.$list_type.'%')
-         ->where('offer_type','like','%'.$offer_type.'%')
-         ->where('city','like','%'.$city_type.'%')
+        //  ->where('offer_type','like','%'.$offer_type.'%')
+        //  ->where('city','like','%'.$city_type.'%')
          ->get();
-         return view('props.searchresults', compact('results'));
+               $singleprop = Property::find(1);
+         return view('props.search', compact('results', 'singleprop'));
 
 
     }
