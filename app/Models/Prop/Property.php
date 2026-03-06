@@ -12,7 +12,6 @@ class Property extends Model
  protected $table='properties';
 
     protected $fillable = [
-        // Define fillable attributes here
         'title',
         'description',
         'price',
